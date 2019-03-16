@@ -9,3 +9,13 @@ h1 {
   font-style: italic;
   color: #373fff;
 }
+
+a{font-size:  90%;}
+h3{
+  color: #8e4a1f;
+  font-style: italic;
+  margin: 0px;
+  border: ridge black 6px;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 30%;}
