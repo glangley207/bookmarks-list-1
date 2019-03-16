@@ -9,16 +9,53 @@
     <script src="/script.js"></script>
   </head>  
   <body>
-  <h1>list1 / 888</h1>
+    
+  <b>list22</b>
+    <div id="list2">
+    https://test.com
+    aaaa
+    bbbb
+  </div>
+
+  <h3>list1 </h3>  
   <pre id="list1">
-  https://glitch.com/~auth0
-  https://www.gnu.org
-  https://glitch.com/edit/#!/animated-pixel-gradients?path=README.md:1:0
+  <b>glitch-projects</b>
+    https://glitch.com/~auth0
+    https://www.gnu.org
+    https://glitch.com/edit/#!/animated-pixel-gradients?path=README.md:1:0
+    
+  glitch-usage
+    https://www.youtube.com/watch?time_continue=40&v=aWJFbtrgW4E
+    (:title   "How To Export A Glitch Project to GitHub")
   </pre>
     
-    
   <script>
-    morph_list('list1')
+        function morph_list_3(id) {
+            let r             = $(`#${id}`)
+            let lines         = r.text().split('\n')
+            let sig           = []   // sigma / collect
+            lines.forEach((v,i)=>{
+                let m    = re_url.exec(v)
+                if(m)    {v = v.replace(re_url,`<a href="${m[0]}">${m[0]}</a>`)}
+              
+                sig.push(fix_left_margin(v))
+                // sig.push(v)
+            })
+            $(`#${id}`).html(sig.join('\n'))}
+
+        function morph_list_2(id) {
+            let r             = $(`#${id}`)
+            let lines         = r.text().split('\n')
+            let sig           = []   // sigma / collect
+            let re            = /( *)(.*)/
+            lines.forEach((v,i)=>{
+                sig.push(fix_left_margin(v)) })
+            $(`#${id}`).html(sig.join('\n'))
+            }
+
+    morph_list_1('list1')
+    morph_list_3('list2')
+    
   </script>
   </body>
 </html>
