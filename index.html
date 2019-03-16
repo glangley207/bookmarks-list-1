@@ -11,13 +11,7 @@
   <body>
     
   <h3>list-1</h3>
-    <div id="list-1">
-      https://test.com
-        * <b>aaaa</b>
-    </div>
-    
-  <h3>list-2</h3>
-  <div id="list-2">
+  <div id="list-1">
     <b>glitch-projects</b>
           https://glitch.com/~auth0
           https://glitch.com/edit/#!/animated-pixel-gradients?path=README.md:1:0
@@ -27,13 +21,13 @@
   </div>
   
   <h3>list-3</h3>
-  <div id="list-3"></div>
+  <div id="list-3" class="extern-list"></div>
 
   <script>
     // ---------------------------------------------------
     morph_list('list-1')
-    morph_list('list-2')
-    fetch_install_list('list-3', 'list-3.txt', 8)
+    
+    install_extern_list()
   </script>
     
   </body>
