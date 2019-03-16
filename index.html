@@ -10,15 +10,12 @@
   </head>  
   <body>
     
-  <section>                     <!-- list-1 -->
   <h3>list-1</h3>
     <div id="list-1">
       https://test.com
         * <b>aaaa</b>
-  </div>
-  </section>
+    </div>
     
-  <section>                    <!-- list-2 -->
   <h3>list-2</h3>
   <div id="list-2">
     <b>glitch-projects</b>
@@ -28,37 +25,16 @@
           https://www.youtube.com/watch?time_continue=40&v=aWJFbtrgW4E
           (:title   "How To Export A Glitch Project to GitHub")
   </div>
-  </section>
   
-  <section>
-    <h3>list-3</h3>
-    <div id="list-3"></div>
-  </section>
-    
+  <h3>list-3</h3>
+  <div id="list-3"></div>
+
   <script>
-  // ---------------------------------------------------
+    // ---------------------------------------------------
     morph_list('list-1')
     morph_list('list-2')
-    
-    function add_list(dat, id, indent_factor=6) {
-        let make_anchor = (s,m)=>{
-               return s.replace(re_url,`<a href="${m[0]}">${m[0]}</a>`)}
-        let sigma         = []                    //  collect
-        let lines         = dat.split('\n')
-        lines.forEach((s)=>{
-            let m    = re_url.exec(s)               // line is url
-            let s_   = m ? make_anchor(s,m)  :  s;
-            sigma.push(fix_left_margin(s_, indent_factor))})
-        $(`#${id}`).html(sigma.join('\n'))}
-
-    fetch('list-3.txt')
-      .then(res=>res.text())
-      .then(dat=>{
-          add_list(dat, 'list-3')
-      })
-      .catch((err)=>{
-      console.log(`ERR: ${err}`)
-      })
+    fetch_install_list('list-3', 'list-3.txt', 8)
   </script>
+    
   </body>
 </html>
