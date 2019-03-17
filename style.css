@@ -20,3 +20,8 @@ h3{
   display: inline-block;
   padding-left: 10px;
   padding-right: 30%;}
+
+/*  regex match highlights  */
+.red   {color: red;}
+.blue  {color: blue;}
+.label {color: #2cb740;}

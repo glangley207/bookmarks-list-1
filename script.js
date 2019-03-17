@@ -1,6 +1,9 @@
 let re_url            = /http[s]:\/\/[^ ]+/g  // cheep hack
 
 // ---------------------------------------------------
+function highlight_match(s, re, type){
+  return s.replace(re, (g0,g1) => `<span class="${type}">${g1}</span>`)}
+// ---------------------------------------------------
 function fix_left_margin(s, factor){
       // 'factor' = conversion factor of "natural" spaces
       let m    = /( *)(.*)/.exec(s)
@@ -11,7 +14,7 @@ function fix_left_margin(s, factor){
           return s}}
 // ---------------------------------------------------
 function morph_list(id, indent_factor=6) {
-  // converts and installs an "in-html" to transformed list
+  // transforms and replaces an "in-html" list
   let $list         = $(`#${id}`)
   let lines         = $list.html().split('\n')
   install_list(id, lines, indent_factor)}
@@ -23,9 +26,13 @@ function install_list(id, list, indent_factor){
     let make_anchor = (s,m)=>s.replace(re_url,`<a href="${m[0]}">${m[0]}</a>`)
     let sigma       = []                    //  collect
     list.forEach((s)=>{
-        let m    = re_url.exec(s)          // line is url
-        let s_   = m ? make_anchor(s,m)  :  s;
-        sigma.push(fix_left_margin(s_, indent_factor))})
+        let m     = re_url.exec(s)          // line is url
+        let s_1   = m ? make_anchor(s,m)  :  s;
+        let s_2   = highlight_match(s_1, /(title:)/g, 'label')
+        let s_3   = highlight_match(s_2, /(\(:[a-zA-Z0-9]+)/g, 'label')
+        let s_4   = fix_left_margin(s_3, indent_factor)
+        sigma.push(s_4)
+      })
     $(`#${id}`).html(sigma.join('\n'))}
 // ---------------------------------------------------
 function fetch_install_list(id, path, indent_factor=6){
@@ -43,3 +50,4 @@ function install_extern_list(){
     $('.extern-list').each((i,e)=>{
           let id       = $(e).attr('id')
           fetch_install_list(id, `${id}.txt`)})}
+

@@ -1,0 +1,20 @@
+    https://www.youtube.com/watch?v=DYZTFooDB24
+      (:title    "Exploring The Parcel Application Bundler")
+      (:tag      key  insight  parsel  fetch promises )
+      (:ri.      DD82)
+          * insight:  integration / synergy
+          * usage of 'parsel'
+          * ALSO:  clear usage of 'promose' 
+          * ALSO:  insight into how 'export' works
+          * ALSO:  usage of alt 'import' vs 'require' usage
+              * es2015 syntax = 'import'
+
+    https://www.youtube.com/watch?v=Oive66jrwBs
+      (:title    "Fetch API Introduction")
+      (:by       Taversy-Media)
+      (:tag      fetch  key  insight  promises)
+          * 'fetch' from browser  -  not th nodejs module
+          * key howto for use of promises -- chain to 2 '.then' to
+            "evaluate" the promise -- not sure exactly
+          * https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+            (:title "mozilla: Using Fetch")
