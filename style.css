@@ -24,4 +24,11 @@ h3{
 /*  regex match highlights  */
 .red   {color: red;}
 .blue  {color: blue;}
-.label {color: #2cb740;}
+.label {color: #c9742e;}
+
+pre, xmp, plaintext, listing {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0px; /* here's the reason you get the "line break" */
+}

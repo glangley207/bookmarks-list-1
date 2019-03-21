@@ -13,16 +13,11 @@ function fix_left_margin(s, factor){
       else {
           return s}}
 // ---------------------------------------------------
-function morph_list(id, indent_factor=6) {
-  // transforms and replaces an "in-html" list
-  let $list         = $(`#${id}`)
-  let lines         = $list.html().split('\n')
-  install_list(id, lines, indent_factor)}
-// ---------------------------------------------------
 function install_list(id, list, indent_factor){
     // installs 'list' making some transformations
     //  * url -> links
     //  * left margin indents based on "natural" source space
+    // console.log(`xxx${id}`)
     let make_anchor = (s,m)=>s.replace(re_url,`<a href="${m[0]}">${m[0]}</a>`)
     let sigma       = []                    //  collect
     list.forEach((s)=>{
@@ -33,7 +28,9 @@ function install_list(id, list, indent_factor){
         let s_4   = fix_left_margin(s_3, indent_factor)
         sigma.push(s_4)
       })
-    $(`#${id}`).html(sigma.join('\n'))}
+    // $(`#${id}`).html(sigma.join('\n'))                     // orig
+    $(`#${id}`).html(`<pre>${sigma.join('\n')}</pre>`)
+    }
 // ---------------------------------------------------
 function fetch_install_list(id, path, indent_factor=6){
     // retrieves file data and installs as list contents
@@ -44,6 +41,13 @@ function fetch_install_list(id, path, indent_factor=6){
           install_list(id, lines, indent_factor)})
       .catch((err)=>{
           console.log(`ERR: ${err}`)})}
+
+// ---------------------------------------------------
+function reform_in_html_list(id, indent_factor=6) {
+  // transforms and replaces an "in-html" list
+  let $list         = $(`#${id}`)
+  let lines         = $list.html().split('\n')
+  install_list(id, lines, indent_factor)}
 // ---------------------------------------------------
 function install_extern_list(){
     // uses ID naming convent assoc'd to file with list data

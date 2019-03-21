@@ -7,14 +7,29 @@
     <link rel="stylesheet" href="/style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="/script.js"></script>
+    <style>
+      div { 
+        margin: 0;
+        display: inline-block;
+      }
+    </style>
   </head>  
   <body>
+    
+  <h3>test in-html list</h3>
+    <pre><div id="list-2"> 
+    aaa
+    bbb
+  </div>
+  </pre>
+    
   <h3>glitch.com</h3>    
-  <div id="list-1">   <!--  an "in-html" list   -->
-    <b>usage:</b>
+  <div id="list-1">    <b>usage:</b>
           https://www.youtube.com/watch?time_continue=40&v=aWJFbtrgW4E
             title:"How To Export A Glitch Project to GitHub"
     <b>projects:</b>
+          https://glitch.com/~google-home
+            * see 'SETUP.md' link: 'API.ai'
           https://glitch.com/~auth0
           https://glitch.com/edit/#!/animated-pixel-gradients?path=README.md:1:0
           https://glitch.com/~simple-custom-element
@@ -24,20 +39,17 @@
           https://glitch.com/~node-beginner
             title: "node-beginner"
           https://glitch.com/~starter-react
-            title: starter-react
-    </div>
-    
-  <h3>Taversy-Media</h3>    <!--  an "external" list  -- placeholder -->
+            title: starter-react</div>
+  <h3>Misc</h3>
+  <div id="list-misc" class="extern-list"></div>
+  <h3>Taversy-Media</h3>
   <div id="list-taversymedia" class="extern-list"></div>
-
   <h3>vscode</h3>
   <div id="list-vscode" class="extern-list"></div>
-  
   <h3>list-test-1</h3>
   <div id="list-test-1" class="extern-list"></div>    
-    
   <script>   // ---------------------------------------
-    morph_list('list-1')
+    reform_in_html_list('list-1')
     install_extern_list()
   </script>
     
