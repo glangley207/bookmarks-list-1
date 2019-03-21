@@ -1,0 +1,17 @@
+    <b>usage:</b>
+          https://www.youtube.com/watch?time_continue=40&v=aWJFbtrgW4E
+            title:"How To Export A Glitch Project to GitHub"
+    <b>projects:</b>
+          https://glitch.com/~google-home
+            * see 'SETUP.md' link: 'API.ai'
+          https://glitch.com/~auth0
+          https://glitch.com/edit/#!/animated-pixel-gradients?path=README.md:1:0
+          https://glitch.com/~simple-custom-element
+            title: "simple-custom-element"
+            * https://developers.google.com/web/fundamentals/web-components/customelements#shadowdom
+              title: "Custom Elements v1: Reusable Web Components"
+          https://glitch.com/~node-beginner
+            title: "node-beginner"
+          https://glitch.com/~starter-react
+            title: starter-react
+            
