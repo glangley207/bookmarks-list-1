@@ -1,0 +1,6 @@
+https://docs.mongodb.com/manual/tutorial/
+https://www.tutorialspoint.com/mongodb/
+  * ok intro material
+https://www.guru99.com/mongodb-tutorials.html
+https://www.w3resource.com/mongodb/nosql.php
+  * https://www.w3resource.com/mongodb/databases-documents-collections.php

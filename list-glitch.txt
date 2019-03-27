@@ -1,7 +1,9 @@
     <b>usage:</b>
           https://www.youtube.com/watch?time_continue=40&v=aWJFbtrgW4E
             title:"How To Export A Glitch Project to GitHub"
-    <b>projects:</b>
+    <b>projects: (my)</b>
+          https://glitch.com/~refactor-hello-express
+    <b>projects: (others)</b>
           https://glitch.com/~google-home
             * see 'SETUP.md' link: 'API.ai'
           https://glitch.com/~auth0

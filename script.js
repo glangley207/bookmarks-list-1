@@ -26,11 +26,10 @@ function install_list(id, list, indent_factor){
         let s_2   = highlight_match(s_1, /(title:)/g, 'label')
         let s_3   = highlight_match(s_2, /(\(:[a-zA-Z0-9]+)/g, 'label')
         let s_4   = fix_left_margin(s_3, indent_factor)
-        sigma.push(s_4)
-      })
-    // $(`#${id}`).html(sigma.join('\n'))                     // orig
-    $(`#${id}`).html(`<pre>${sigma.join('\n')}</pre>`)
-    }
+        sigma.push(s_4)})
+    // ORIG: =  PROBLEM  $(`#${id}`).html(`<pre>${sigma.join('\n')}</pre>`)
+    // FIX:             --  :BINGO
+    $(`#${id}`).replaceWith(`<pre>${sigma.join('\n')}</pre>`)  }
 // ---------------------------------------------------
 function fetch_install_list(id, path, indent_factor=6){
     // retrieves file data and installs as list contents
@@ -41,11 +40,11 @@ function fetch_install_list(id, path, indent_factor=6){
           install_list(id, lines, indent_factor)})
       .catch((err)=>{
           console.log(`ERR: ${err}`)})}
-
 // ---------------------------------------------------
 function reform_in_html_list(id, indent_factor=6) {
   // transforms and replaces an "in-html" list
   let $list         = $(`#${id}`)
+  // :D - add check length here - if 0 ...
   let lines         = $list.html().split('\n')
   install_list(id, lines, indent_factor)}
 // ---------------------------------------------------
